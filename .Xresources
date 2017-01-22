@@ -1,0 +1,9 @@
+XTerm*termName:            xterm-256color
+XTerm*locale:              true
+XTerm*selectToClipboard:   true
+XTerm*saveLines:           2000
+
+xterm*faceName:           Oxygen Mono
+xterm*faceNameDoublesize: MigMix 2M
+
+xterm*ximFont:               MigMix 2M
