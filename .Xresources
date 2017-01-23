@@ -1,3 +1,5 @@
+# 更新：xrdb .Xdefaults
+
 XTerm*termName:            xterm-256color
 XTerm*locale:              true
 XTerm*selectToClipboard:   true
@@ -6,4 +8,12 @@ XTerm*saveLines:           2000
 xterm*faceName:           Oxygen Mono
 xterm*faceNameDoublesize: MigMix 2M
 
+# Ubuntu 13.10からiBusの機能が削減されたため、以前と同じような使い勝手を望む場合は、Fcitxを使用するように設定を変更した方がいいかも
+
+# xtermにはfcitxやibusではインライン入力ができません。
+# そこでuim-ximを利用してインライン入力をできるように設定
 xterm*ximFont:               MigMix 2M
+
+UXTerm*VT100*font: 7x14
+XTerm*VT100*font: 7x14
+
