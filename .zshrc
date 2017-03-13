@@ -199,3 +199,7 @@ case ${OSTYPE} in
         alias ls='ls -F --color=auto'
         ;;
 esac
+
+if [ -d "/vagrant/shared/impress/mdpress" ] ; then
+  PATH="$PATH:/vagrant/shared/impress/mdpress"
+fi
