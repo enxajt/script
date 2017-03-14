@@ -13,7 +13,7 @@ gsettings set org.mate.caja.desktop home-icon-visible false
 gsettings set org.mate.caja.desktop volumes-visible false
 
 # japanese input: 
-sudo apt-get remove ibus
+sudo apt-get remove -y ibus
 
 # Copy over private key, and set permissions
 mkdir ~/.ssh/
