@@ -14,3 +14,12 @@ gsettings set org.mate.caja.desktop volumes-visible false
 
 # japanese input: 
 sudo apt-get remove ibus
+
+# Copy over private key, and set permissions
+mkdir ~/.ssh/
+ln -s /vagrant/shared/id_rsa ~/.ssh/id_rsa
+touch ~/.ssh/known_hosts
+ssh-keyscan bitbucket.org >> ~/.ssh/known_hosts
+git clone git@bitbucket.org:enxajt/private-config.git
+./private-config/git.sh
+#./private-config/user.sh
