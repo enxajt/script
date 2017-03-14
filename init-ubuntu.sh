@@ -4,9 +4,9 @@
 gsettings set org.gnome.settings-daemon.plugins.keyboard active false
 
 # background
-convert -size 500x500 xc:black /home/enxajt/black.jpg
+convert -size 500x500 xc:black ~/black.jpg
 export DISPLAY=:0.0
-gsettings set org.mate.background picture-filename /home/enxajt/black.jpg
+gsettings set org.mate.background picture-filename ~/black.jpg
 
 # desktop icon
 gsettings set org.mate.caja.desktop home-icon-visible false
@@ -23,3 +23,9 @@ ssh-keyscan bitbucket.org >> ~/.ssh/known_hosts
 git clone git@bitbucket.org:enxajt/private-config.git
 ./private-config/git.sh
 #./private-config/user.sh
+
+# vim
+git clone https://github.com/enxajt/.vim.git
+ln -nfs /vagrant/shared/vim/backup ~/.vim/backup
+ln -nfs /vagrant/shared/vim/swp ~/.vim/swp
+ln -nfs /vagrant/shared/vim/undo ~/.vim/undo
