@@ -11,3 +11,6 @@ gsettings set org.mate.background picture-filename /home/enxajt/black.jpg
 # desktop icon
 gsettings set org.mate.caja.desktop home-icon-visible false
 gsettings set org.mate.caja.desktop volumes-visible false
+
+# japanese input: 
+sudo apt-get remove ibus
