@@ -29,3 +29,10 @@ git clone https://github.com/enxajt/.vim.git
 ln -nfs /vagrant/shared/vim/backup ~/.vim/backup
 ln -nfs /vagrant/shared/vim/swp ~/.vim/swp
 ln -nfs /vagrant/shared/vim/undo ~/.vim/undo
+
+git remote set-url origin git@github.com:enxajt/.vim.git
+
+# dropbox (duplication with ansible)
+dropbox lansync n
+dropbox autostart y
+dropbox start
