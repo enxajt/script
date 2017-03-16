@@ -24,7 +24,7 @@ git clone git@bitbucket.org:enxajt/private-config.git
 ./private-config/git.sh
 #./private-config/user.sh
 
-# vim
+# .vim
 git clone https://github.com/enxajt/.vim.git
 ln -nfs /vagrant/shared/vim/backup ~/.vim/backup
 ln -nfs /vagrant/shared/vim/swp ~/.vim/swp
