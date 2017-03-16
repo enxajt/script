@@ -30,6 +30,7 @@ setopt print_eight_bit
 # prompt
 ########################################
 # git設定
+#RPROMPT="%{${fg[blue]}%}[%~]%{${reset_color}%}"
 autoload -Uz vcs_info
 setopt prompt_subst
 zstyle ':vcs_info:git:*' check-for-changes true
@@ -38,24 +39,22 @@ zstyle ':vcs_info:git:*' unstagedstr "%F{red}+"
 zstyle ':vcs_info:*' formats "%F{green}%c%u[%b]%f"
 zstyle ':vcs_info:*' actionformats '[%b|%a]'
 precmd () { vcs_info }
-RPROMPT='${vcs_info_msg_0_}'
+#RPROMPT=$RPROMPT'${vcs_info_msg_0_}'
 
-# %# 一般ユーザなら%、スーパーユーザなら#
-# %H ホスト名
-# %m ホスト名のうち最初のドットの前まで
-# %d カレントディレクトリのパス
-# %~ カレントディレクトリのパス(ホームの場合~)
+# %H ホスト名  # %m ホスト名のうち最初のドットの前まで
+# %d pwd  # %~ pwd(ホームの場合~)
 # %n ユーザ名
-# %D YY-MM-DD
-# %T HH:MM
-# %* HH:MM:SS
+# %D YY-MM-DD  # %T HH:MM  # %* HH:MM:SS
+# %# 一般ユーザなら%、スーパーユーザなら#
+#PROMPT="%(?.%{${fg[green]}%}.%{${fg[red]}%})%n${reset_color}@${fg[blue]}%m${reset_color}(%*%) %~
+#%# "
 
-# PROMPT  コマンドを入力する左側の表示。デフォルトではユーザー名が表示される場所
-PROMPT="  %(?.%{${fg[green]}%}.%{${fg[red]}%})%n${reset_color}@${fg[blue]}%m${reset_color}(%*%) %~${vcs_info_msg_0_}
+PROMPT="
+[%*] [%n@%m] %~ "
+PROMPT=$PROMPT'${vcs_info_msg_0_}'
+PROMPT=$PROMPT"
 %# "
-#PROMPT="%{$fg[green]%}%m%(!.#.$) %{$reset_color%}"
-#PROMPT="%*
-#[%n@%m] %~ %# "
+
 #PROMPT='[%n@%m] %~ %# '
 
 # PROMPT2 ２行以上のプロンプトで表示される。パイプ時とか。
