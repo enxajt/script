@@ -21,8 +21,8 @@ ln -s /vagrant/shared/id_rsa ~/.ssh/id_rsa
 touch ~/.ssh/known_hosts
 ssh-keyscan bitbucket.org >> ~/.ssh/known_hosts
 git clone git@bitbucket.org:enxajt/private-config.git
-./private-config/git.sh
-#./private-config/user.sh
+sh ./private-config/git.sh
+#sh ./private-config/user.sh
 
 # dropbox (duplication with ansible)
 dropbox lansync n

@@ -1,8 +1,45 @@
-PROMPT="%(?.%{${fg[green]}%}.%{${fg[red]}%})%n${reset_color}@${fg[blue]}%m${reset_color}(%*%) %~
-%# "
-#PROMPT="%*
-#[%n@%m] %~ %# "
-#PROMPT='[%n@%m] %~ %# '
+########################################
+# 環境変数
+########################################
+export LANG=ja_JP.UTF-8
+
+########################################
+# color
+########################################
+export TERM="xterm-256color"
+#autoload colors
+autoload -Uz colors
+colors
+
+########################################
+# view
+########################################
+# historyに日付を表示
+alias h='fc -lt '%F %T' 1'
+alias cp='cp -i'
+alias rm='rm -i'
+alias mkdir='mkdir -p'
+alias ..='c ../'
+alias back='pushd'
+alias diff='diff -U1'
+
+# 日本語ファイル名を表示可能にする
+setopt print_eight_bit
+
+########################################
+# prompt
+########################################
+# git設定
+autoload -Uz vcs_info
+setopt prompt_subst
+zstyle ':vcs_info:git:*' check-for-changes true
+zstyle ':vcs_info:git:*' stagedstr "%F{yellow}!"
+zstyle ':vcs_info:git:*' unstagedstr "%F{red}+"
+zstyle ':vcs_info:*' formats "%F{green}%c%u[%b]%f"
+zstyle ':vcs_info:*' actionformats '[%b|%a]'
+precmd () { vcs_info }
+RPROMPT='${vcs_info_msg_0_}'
+
 # %# 一般ユーザなら%、スーパーユーザなら#
 # %H ホスト名
 # %m ホスト名のうち最初のドットの前まで
@@ -13,19 +50,22 @@ PROMPT="%(?.%{${fg[green]}%}.%{${fg[red]}%})%n${reset_color}@${fg[blue]}%m${rese
 # %T HH:MM
 # %* HH:MM:SS
 
+# PROMPT  コマンドを入力する左側の表示。デフォルトではユーザー名が表示される場所
+PROMPT="  %(?.%{${fg[green]}%}.%{${fg[red]}%})%n${reset_color}@${fg[blue]}%m${reset_color}(%*%) %~${vcs_info_msg_0_}
+%# "
+#PROMPT="%{$fg[green]%}%m%(!.#.$) %{$reset_color%}"
+#PROMPT="%*
+#[%n@%m] %~ %# "
+#PROMPT='[%n@%m] %~ %# '
+
+# PROMPT2 ２行以上のプロンプトで表示される。パイプ時とか。
+PROMPT2="%{$fg[green]%}%_> %{$reset_color%}"
+# SPROMPT 入力したコマンドが、打ち間違いなどで見つからない時に表示される「もしかして」
+SPROMPT="%{$fg[red]%}correct: %R -> %r [nyae]? %{$reset_color%}"
+
 ########################################
-# ↑ Kohei added
+# 単語区切り
 ########################################
-# 環境変数
-export LANG=ja_JP.UTF-8
-
-# 色を使用出来るようにする
-autoload -Uz colors
-colors
-
-# vim風キーバインドにする
-bindkey -v
-
 # 単語の区切り文字を指定する
 autoload -Uz select-word-style
 select-word-style default
@@ -36,7 +76,8 @@ zstyle ':zle:*' word-chars " /=;@:{},|"
 zstyle ':zle:*' word-style unspecified
 
 ########################################
-# for zsh-completions
+# completions
+########################################
 fpath=(/usr/local/share/zsh-completions $fpath)
 
 # 補完機能を有効にする
@@ -58,18 +99,10 @@ zstyle ':completion:*:processes' command 'ps x -o pid,s,args'
 zstyle ':completion:*:default' menu select=2
 
 ########################################
-# オプション
-# 日本語ファイル名を表示可能にする
-setopt print_eight_bit
-
+# other
+########################################
 # beep を無効にする
 setopt no_beep
-
-# Ctrl+sのロック, Ctrl+qのロック解除を無効にする
-setopt no_flow_control
-
-# Ctrl+Dでzshを終了しない
-setopt ignore_eof
 
 # '#' 以降をコメントとして扱う
 setopt interactive_comments
@@ -110,6 +143,10 @@ setopt correct
 
 ########################################
 # キーバインド
+########################################
+# vim風キーバインドにする
+bindkey -v
+
 # Ctrl+rでヒストリーのインクリメンタルサーチ、Ctrl+sで逆順
 bindkey '^r' history-incremental-pattern-search-backward
 bindkey '^s' history-incremental-pattern-search-forward
@@ -121,13 +158,23 @@ zle -N history-beginning-search-backward-end history-search-end
 zle -N history-beginning-search-forward-end history-search-end
 bindkey "^p" history-beginning-search-backward-end
 bindkey "^b" history-beginning-search-forward-end
+
+# Ctrl+sのロック, Ctrl+qのロック解除を無効にする
+setopt no_flow_control
+
+# Ctrl+Dでzshを終了しない
+setopt ignore_eof
+
+# backspace,deleteキーを使えるように
+stty erase ^H
+bindkey "^[[3~" delete-char
+alias cp='cp -i'
+alias mv='mv -i'
+alias mkdir='mkdir -p'
+
 ########################################
-# グローバルエイリアス
-alias -g L='| less'
-alias -g H='| head'
-alias -g G='| grep'
-alias -g GI='| grep -ri'
 # エイリアス
+########################################
 alias lst='ls -ltr --color=auto'
 alias l='ls -ltr --color=auto'
 alias la='ls -la --color=auto'
@@ -137,24 +184,17 @@ alias v='vim'
 alias vi='vim'
 alias vz='vim ~/.zshrc'
 alias c='cdr'
-# historyに日付を表示
-alias h='fc -lt '%F %T' 1'
-alias cp='cp -i'
-alias rm='rm -i'
-alias mkdir='mkdir -p'
-alias ..='c ../'
-alias back='pushd'
-alias diff='diff -U1'
-# backspace,deleteキーを使えるように
-stty erase ^H
-bindkey "^[[3~" delete-char
-alias cp='cp -i'
-alias mv='mv -i'
-alias mkdir='mkdir -p'
+# グローバルエイリアス
+alias -g L='| less'
+alias -g H='| head'
+alias -g G='| grep'
+alias -g GI='| grep -ri'
 # sudo の後のコマンドでエイリアスを有効にする
 alias sudo='sudo '
 
+########################################
 # C で標準出力をクリップボードにコピーする
+########################################
 # mollifier delta blog : http://mollifier.hatenablog.com/entry/20100317/p1
 if which pbcopy >/dev/null 2>&1 ; then
     # Mac
@@ -172,19 +212,6 @@ fi
 autoload -Uz add-zsh-hook
 autoload -Uz chpwd_recent_dirs cdr
 add-zsh-hook chpwd chpwd_recent_dirs
-# cdrコマンドで履歴にないディレクトリにも移動可能に
-
-# git設定
-RPROMPT="%{${fg[blue]}%}[%~]%{${reset_color}%}"
-autoload -Uz vcs_info
-setopt prompt_subst
-zstyle ':vcs_info:git:*' check-for-changes true
-zstyle ':vcs_info:git:*' stagedstr "%F{yellow}!"
-zstyle ':vcs_info:git:*' unstagedstr "%F{red}+"
-zstyle ':vcs_info:*' formats "%F{green}%c%u[%b]%f"
-zstyle ':vcs_info:*' actionformats '[%b|%a]'
-precmd () { vcs_info }
-RPROMPT=$RPROMPT'${vcs_info_msg_0_}'
 
 ########################################
 # OS 別の設定
