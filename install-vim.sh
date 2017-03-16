@@ -1,3 +1,5 @@
+# prepare
+
 # delete old vim
 sudo apt-get -y remove --purge vim vim-runtime vim-gnome vim-tiny vim-gui-common
 sudo rm -rf /usr/local/share/vim /usr/bin/vim
