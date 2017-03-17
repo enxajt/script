@@ -7,3 +7,8 @@ sh ./set-terminal.sh
 
 firefox
 wmctrl -r firefox -e 0,1000,0,900,1000
+
+# dropbox (duplication with ansible)
+dropbox lansync n
+dropbox autostart y
+dropbox start

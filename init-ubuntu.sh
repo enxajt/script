@@ -24,11 +24,6 @@ git clone git@bitbucket.org:enxajt/private-config.git
 sh ./private-config/git.sh
 #sh ./private-config/user.sh
 
-# dropbox (duplication with ansible)
-dropbox lansync n
-dropbox autostart y
-dropbox start
-
 # firefox vimfx
 git clone https://github.com/enxajt/vimfx.git ~/.config/vimfx
 #sudo chmod 777 -R ~/.config vimfx
