@@ -29,38 +29,48 @@ setopt print_eight_bit
 ########################################
 # prompt
 ########################################
-# git設定
-#RPROMPT="%{${fg[blue]}%}[%~]%{${reset_color}%}"
-autoload -Uz vcs_info
-setopt prompt_subst
-zstyle ':vcs_info:git:*' check-for-changes true
-zstyle ':vcs_info:git:*' stagedstr "%F{yellow}!"
-zstyle ':vcs_info:git:*' unstagedstr "%F{red}+"
-zstyle ':vcs_info:*' formats "%F{green}%c%u[%b]%f"
-zstyle ':vcs_info:*' actionformats '[%b|%a]'
-precmd () { vcs_info }
-#RPROMPT=$RPROMPT'${vcs_info_msg_0_}'
+# git
 
+# git after commit before push が、green... yellowにしたい
+# #RPROMPT="%{${fg[blue]}%}[%~]%{${reset_color}%}"
+# autoload -Uz vcs_info
+# setopt prompt_subst
+# zstyle ':vcs_info:git:*' check-for-changes true
+# zstyle ':vcs_info:git:*' stagedstr "%F{yellow}!"
+# zstyle ':vcs_info:git:*' unstagedstr "%F{red}+"
+# zstyle ':vcs_info:*' formats "%F{green}%c%u[%b]%f"
+# zstyle ':vcs_info:*' actionformats '[%b|%a]'
+# precmd () { vcs_info }
+# #RPROMPT=$RPROMPT'${vcs_info_msg_0_}'
+
+source ~/zsh-git-prompt/zshrc.sh
+# $(git_super_status) はシングルコーテーションで囲む
+# PROMPT='%B%m%~%b$(git_super_status) %# '
+ZSH_THEME_GIT_PROMPT_PREFIX="["
+ZSH_THEME_GIT_PROMPT_SUFFIX=" ]"
+ZSH_THEME_GIT_PROMPT_BRANCH="%{$fg[white]%}"
+ZSH_THEME_GIT_PROMPT_STAGED="%{$fg[green]%}%{ %G%}"
+ZSH_THEME_GIT_PROMPT_CONFLICTS="%{$fg[magenta]%}%{x%G%}"
+ZSH_THEME_GIT_PROMPT_CHANGED="%{$fg[red]%}%{+%G%}"
+ZSH_THEME_GIT_PROMPT_BEHIND="%{$fg[red]%}%{-%G%}"
+ZSH_THEME_GIT_PROMPT_AHEAD="%{$fg[green]%}%{+%G%}"
+ZSH_THEME_GIT_PROMPT_CLEAN="%{$fg[green]%}%{✔%G%}"
+
+# %D YY-MM-DD  # %T HH:MM  # %* HH:MM:SS
+# %n ユーザ名
 # %H ホスト名  # %m ホスト名のうち最初のドットの前まで
 # %d pwd  # %~ pwd(ホームの場合~)
-# %n ユーザ名
-# %D YY-MM-DD  # %T HH:MM  # %* HH:MM:SS
 # %# 一般ユーザなら%、スーパーユーザなら#
+# %B%b inside is BOLD
 
-# colored
-PROMPT="
-[%*] [%(?.%{${fg[blue]}%}.%{${fg[green]}%})%n${reset_color}@${fg[blue]}%m${reset_color}] %~"
+PROMPT='
+%B%*%b %n@%m %~ $(git_super_status) '
 PROMPT=$PROMPT'${vcs_info_msg_0_}'
 PROMPT=$PROMPT"
 %# "
 
-# not colored
-# PROMPT="
-# [%*] [%n@%m] %~ "
-# PROMPT=$PROMPT'${vcs_info_msg_0_}'
-# PROMPT=$PROMPT"
-# %# "
-
+# colored
+#[%*] [%(?.%{${fg[blue]}%}.%{${fg[green]}%})%n${reset_color}@${fg[blue]}%m${reset_color}] %~"
 # one line
 #PROMPT='[%n@%m] %~ %# '
 
