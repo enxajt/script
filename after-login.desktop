@@ -1,5 +1,5 @@
 [Desktop Entry]
 Type=Application
-Name=up-terminal
-Exec="/home/enxajt/dotfiles/up-terminal.sh"
+Name=after-login
+Exec="/home/enxajt/dotfiles/start-up.sh"
 X-GNOME-Autostart-enabled=true
