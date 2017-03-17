@@ -10,5 +10,5 @@ gsettings set org.mate.caja.desktop home-icon-visible false
 gsettings set org.mate.caja.desktop volumes-visible false
 
 # firefox vimfx
-[ ! -e ~/.confi/vimfx ] && git clone https://github.com/enxajt/vimfx.git ~/.config/vimfx
-#sudo chmod 777 -R ~/.config vimfx
+[ ! -e ~/.vimfx ] && git clone https://github.com/enxajt/vimfx.git ~/.vimfx
+#sudo chmod 777 -R ~/.vimfx
