@@ -27,3 +27,5 @@ sh ./private-config/git.sh
 # firefox vimfx
 git clone https://github.com/enxajt/vimfx.git ~/.config/vimfx
 #sudo chmod 777 -R ~/.config vimfx
+
+git clone https://github.com/olivierverdier/zsh-git-prompt.git ~/zsh-git-prompt
