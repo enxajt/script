@@ -12,7 +12,7 @@ sudo apt-get install -y build-dep vim
 sudo apt-get install -y lua5.2 liblua5.2-dev luajit libluajit-5.1 python-dev python3-dev python-pip python3-pip ruby-dev libperl-dev libncurses5-dev libatk1.0-dev libx11-dev libxpm-dev libxt-dev
 
 # install vim
-git clone --depth 1 https://github.com/vim/vim.git ~/.cache/vim && cd ~/.cache/vim/src
+[ ! -e ~/.cache/vim ] && git clone --depth 1 https://github.com/vim/vim.git ~/.cache/vim && cd ~/.cache/vim/src
 /configure --prefix=/usr/local \
 --with-features=huge \
 --enable-multibyte \
@@ -28,7 +28,7 @@ git clone --depth 1 https://github.com/vim/vim.git ~/.cache/vim && cd ~/.cache/v
 make && sudo make install
 
 # .vim
-git clone https://github.com/enxajt/.vim.git
+[ ! -e ~/.vim ] && git clone https://github.com/enxajt/.vim.git ~/.vim
 git remote set-url origin git@github.com:enxajt/.vim.git
 ln -s /vagrant/shared/vim/swp /home/enxajt/.vim/
 ln -s /vagrant/shared/vim/backup /home/enxajt/.vim/
