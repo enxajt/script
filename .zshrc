@@ -46,23 +46,27 @@ precmd () { vcs_info }
 # %n ユーザ名
 # %D YY-MM-DD  # %T HH:MM  # %* HH:MM:SS
 # %# 一般ユーザなら%、スーパーユーザなら#
+
+# colored
 PROMPT="
 [%*] [%(?.%{${fg[blue]}%}.%{${fg[green]}%})%n${reset_color}@${fg[blue]}%m${reset_color}] %~"
 PROMPT=$PROMPT'${vcs_info_msg_0_}'
 PROMPT=$PROMPT"
 %# "
 
+# not colored
 # PROMPT="
 # [%*] [%n@%m] %~ "
 # PROMPT=$PROMPT'${vcs_info_msg_0_}'
 # PROMPT=$PROMPT"
 # %# "
 
+# one line
 #PROMPT='[%n@%m] %~ %# '
 
-# PROMPT2 ２行以上のプロンプトで表示される。パイプ時とか。
+# パイプ時とか。
 PROMPT2="%{$fg[green]%}%_> %{$reset_color%}"
-# SPROMPT 入力したコマンドが、打ち間違いなどで見つからない時に表示される「もしかして」
+# コマンド打ち間違いなどで表示される「もしかして」
 SPROMPT="%{$fg[red]%}correct: %R -> %r [nyae]? %{$reset_color%}"
 
 ########################################
