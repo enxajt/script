@@ -13,7 +13,7 @@ sudo apt-get install -y lua5.2 liblua5.2-dev luajit libluajit-5.1 python-dev pyt
 
 # install vim
 mkdir -p ~/.cache
-[ ! -e ~/.cache/install-vim ] && git clone --depth 1 https://github.com/vim/vim.git ~/.cache/install-vim
+[ ! -e ~/.cache/install-vim ] && git clone --depth 1 https://github.com/vim/vim.git ~/.cache/install-vim || echo already existing
 cd ~/.cache/install-vim/src
 /configure --prefix=/usr/local \
 --with-features=huge \
@@ -30,11 +30,11 @@ cd ~/.cache/install-vim/src
 make && sudo make install
 
 # .vim
-[ ! -e ~/.vim ] && git clone https://github.com/enxajt/.vim.git ~/.vim
-git remote set-url origin git@github.com:enxajt/.vim.git
-ln -s /vagrant/shared/vim/swp /home/enxajt/.vim/
-ln -s /vagrant/shared/vim/backup /home/enxajt/.vim/
-ln -s /vagrant/shared/vim/undo /home/enxajt/.vim/
+[ ! -e ~/.vim ] && git clone https://github.com/enxajt/.vim.git ~/.vim || echo already existing
+cd ~/.vim && git remote set-url origin git@github.com:enxajt/.vim.git
+ln -sf /vagrant/shared/vim/swp /home/enxajt/.vim/
+ln -sf /vagrant/shared/vim/backup /home/enxajt/.vim/
+ln -sf /vagrant/shared/vim/undo /home/enxajt/.vim/
 
 # install dein.vim
 pip install --upgrade pip
