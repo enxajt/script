@@ -12,7 +12,8 @@ sudo apt-get install -y build-dep vim
 sudo apt-get install -y lua5.2 liblua5.2-dev luajit libluajit-5.1 python-dev python3-dev python-pip python3-pip ruby-dev libperl-dev libncurses5-dev libatk1.0-dev libx11-dev libxpm-dev libxt-dev
 
 # install vim
-[ ! -e ~/.cache/vim ] && git clone --depth 1 https://github.com/vim/vim.git ~/.cache/vim && cd ~/.cache/vim/src
+mkdir -p /home/enxajt/.cache
+[ ! -e ~/.cache/install-vim ] && git clone --depth 1 https://github.com/vim/vim.git ~/.cache/install-vim && cd ~/.cache/install-vim/src
 /configure --prefix=/usr/local \
 --with-features=huge \
 --enable-multibyte \
