@@ -43,7 +43,7 @@ setopt print_eight_bit
 # precmd () { vcs_info }
 # #RPROMPT=$RPROMPT'${vcs_info_msg_0_}'
 
-source ~/zsh-git-prompt/zshrc.sh
+source ~/.config/zsh-git-prompt/zshrc.sh
 # $(git_super_status) はシングルコーテーションで囲む
 # PROMPT='%B%m%~%b$(git_super_status) %# '
 ZSH_THEME_GIT_PROMPT_PREFIX="["
