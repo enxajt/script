@@ -46,14 +46,17 @@ precmd () { vcs_info }
 # %n ユーザ名
 # %D YY-MM-DD  # %T HH:MM  # %* HH:MM:SS
 # %# 一般ユーザなら%、スーパーユーザなら#
-#PROMPT="%(?.%{${fg[green]}%}.%{${fg[red]}%})%n${reset_color}@${fg[blue]}%m${reset_color}(%*%) %~
-#%# "
-
 PROMPT="
-[%*] [%n@%m] %~ "
+[%*] [%(?.%{${fg[blue]}%}.%{${fg[green]}%})%n${reset_color}@${fg[blue]}%m${reset_color}] %~"
 PROMPT=$PROMPT'${vcs_info_msg_0_}'
 PROMPT=$PROMPT"
 %# "
+
+# PROMPT="
+# [%*] [%n@%m] %~ "
+# PROMPT=$PROMPT'${vcs_info_msg_0_}'
+# PROMPT=$PROMPT"
+# %# "
 
 #PROMPT='[%n@%m] %~ %# '
 
