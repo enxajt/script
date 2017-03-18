@@ -31,10 +31,7 @@ ln -sf /vagrant/shared/vim/swp ~/.vim/
 ln -sf /vagrant/shared/vim/backup ~/.vim/
 ln -sf /vagrant/shared/vim/undo ~/.vim/
 
-#mkdir -p ~/.config
-#[ ! -e ~/.config/nvim ] && git clone https://github.com/enxajt/nvim.git ~/.config/nvim || echo already existing
-#nkf -Lu --overwrite ~/.config/nvim/init.vim
-#sudo ln -s ~/.vim/.vimrc /root/neovim/share/nvim/sysinit.vim
+# https://github.com/enxajt/nvim.git ~/.config/nvim || echo already existing
 
 # install dein.vim
 mkdir -p ~/.cache/dein
