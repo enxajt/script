@@ -4,4 +4,4 @@
 #gsettings set org.gnome.settings-daemon.plugins.keyboard active false
 
 # japanese input: 
-sudo apt-get remove -y ibus
+sudo apt-get remove -y ibus || echo nonexist?
