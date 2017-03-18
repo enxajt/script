@@ -7,3 +7,4 @@
 50-myconfig.conf
 ## autostart
 ~/.config/autostart/after-login.desktop > start-up.sh > set-terminal.sh
+## vimfx for firefox
