@@ -30,8 +30,8 @@ cd ~/.vim && git remote set-url origin git@github.com:enxajt/.vim.git
 ln -sf /vagrant/shared/vim/swp ~/.vim/
 ln -sf /vagrant/shared/vim/backup ~/.vim/
 ln -sf /vagrant/shared/vim/undo ~/.vim/
-
-# https://github.com/enxajt/nvim.git ~/.config/nvim || echo already existing
+mkdir -p ~/.config/nvim 
+ln -s ~/.vim/vimrc ~/.config/nvim/init.vim
 
 # install dein.vim
 mkdir -p ~/.cache/dein
