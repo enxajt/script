@@ -4,7 +4,8 @@
 mkdir -p ~/.ssh/
 ln -sf /vagrant/shared/.ssh/id_rsa ~/.ssh/id_rsa
 ln -sf /vagrant/shared/.ssh/known_hosts ~/.ssh/known_hosts
-ln -sf /vagrant/shared/.ssh/config_linux .ssh/config
+[ -e .ssh/config ] && mv .ssh/config .ssh/config.bak
+cp /vagrant/shared/.ssh/config_linux .ssh/config
 
 ssh-keyscan bitbucket.org >> ~/.ssh/known_hosts
 [ ! -e ~/.private-config ] && git clone git@bitbucket.org:enxajt/private-config.git ~/.private-config || echo already existing
