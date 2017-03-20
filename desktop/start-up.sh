@@ -12,3 +12,5 @@ wmctrl -r firefox -e 0,1000,0,900,1000
 dropbox lansync n
 dropbox autostart y
 dropbox start
+
+goldendict
