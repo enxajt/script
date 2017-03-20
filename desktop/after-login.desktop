@@ -1,5 +1,5 @@
 [Desktop Entry]
 Type=Application
 Name=after-login
-Exec="~/dotfiles/start-up.sh"
+Exec="~/.dotfiles/desktop/start-up.sh"
 X-GNOME-Autostart-enabled=true
