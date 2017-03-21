@@ -22,6 +22,8 @@ sudo apt-get update && sudo apt-get install -y \
 sudo --set-home pip install --upgrade pip
 sudo --set-home pip3 install --upgrade pip3
 sudo --set-home pip3 install neovim
+pip2 install --user neovim
+pip3 install --user neovim
 
 sudo apt autoremove -y
 
