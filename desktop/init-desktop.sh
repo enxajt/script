@@ -12,3 +12,11 @@ dconf write /org/mate/desktop/background/picture-filename "'$HOME/.black.jpg'"
 #gsettings set org.mate.caja.desktop volumes-visible false
 dconf write /org/mate/caja/desktop/home-icon-visible false
 dconf write /org/mate/caja/desktop/volumes-visible false
+
+dconf write /org/mate/panel/toplevels/top/expand false
+dconf write /org/mate/panel/toplevels/top/auto-hide true
+dconf write /org/mate/panel/toplevels/top/size '21'
+
+dconf write /org/mate/panel/toplevels/bottom/expand false
+dconf write /org/mate/panel/toplevels/bottom/auto-hide true
+dconf write /org/mate/panel/toplevels/bottom/size '21'
