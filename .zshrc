@@ -33,15 +33,6 @@ man() {
 ########################################
 # view
 ########################################
-# historyに日付を表示
-alias h='fc -lt '%F %T' 1'
-alias cp='cp -i'
-alias rm='rm -i'
-alias mkdir='mkdir -p'
-alias ..='c ../'
-alias back='pushd'
-alias diff='diff -U1'
-
 # 日本語ファイル名を表示可能にする
 setopt print_eight_bit
 
@@ -201,15 +192,22 @@ setopt no_flow_control
 setopt ignore_eof
 
 # backspace,deleteキーを使えるように
-stty erase ^H
+#stty erase ^H
 bindkey "^[[3~" delete-char
-alias cp='cp -i'
-alias mv='mv -i'
-alias mkdir='mkdir -p'
 
 ########################################
 # エイリアス
 ########################################
+# historyに日付を表示
+alias h='fc -lt '%F %T' 1'
+
+alias cp='cp -i'
+alias mv='mv -i'
+alias rm='rm -i'
+alias mkdir='mkdir -p'
+alias ..='c ../'
+alias back='pushd'
+alias diff='diff -U1'
 alias lst='ls -ltr --color=auto'
 alias l='ls -ltr --color=auto'
 alias la='ls -la --color=auto'
