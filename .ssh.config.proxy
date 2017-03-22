@@ -1,0 +1,19 @@
+Host *
+  ServerAliveInterval 30
+  ServerAliveCountMax 6
+
+Host github.com
+    User git
+    Hostname ssh.github.com
+    IdentityFile ~/.ssh/id_rsa
+    Port 443
+    #ProxyCommand nc -X connect -x ***REMOVED*** %h %p
+    ProxyCommand connect -H ***REMOVED*** %h %p
+
+Host bitbucket.org
+    User git
+    IdentityFile ~/.ssh/id_rsa
+    HostName altssh.bitbucket.org
+    Port 443
+    #ProxyCommand nc -X connect -x ***REMOVED*** %h %p
+    ProxyCommand connect -H ***REMOVED*** %h %p
