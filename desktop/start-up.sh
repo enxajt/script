@@ -10,7 +10,6 @@ wmctrl -r firefox -e 0,700,0,900,1300
 
 # dropbox (duplication with ansible)
 dropbox lansync n
-dropbox autostart y
 dropbox start
 
-goldendict &
+# goldendict &
