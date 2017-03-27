@@ -13,3 +13,5 @@ dropbox lansync n
 dropbox start
 
 # goldendict &
+
+sh ~/.dotfiles/always.sh
