@@ -25,8 +25,8 @@ const MAPPINGS = {
   'stop': '<c-escape>',
   'stop_all': 'a<c-escape>',
 
-  'history_back': '<a-h>',
-  'history_forward': '<a-l>',
+  'history_back': '<c-o>',
+  'history_forward': '<c-i>',
 
   'scroll_left': 'H',
   'scroll_right': 'L',

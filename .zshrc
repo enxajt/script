@@ -144,7 +144,7 @@ setopt auto_pushd
 # 重複したディレクトリを追加しない
 setopt pushd_ignore_dups
 # cdの後にlsを実行
-chpwd() { ls -ltr --color=auto }
+chpwd() { ls -altr --color=auto }
 
 # 同時に起動したzshの間でヒストリを共有する
 setopt share_history
