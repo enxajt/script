@@ -46,3 +46,7 @@ cd ~/.cache/dein \
 nvim +":silent call dein#install()" +:q
 nvim +":silent UpdateRemotePlugins" +:q
 #RUN nvim -E -u NONE -S > /dev/null
+
+# install Nyaovim
+sudo npm install -g nyaovim
+sudo apt-get install libatk-adaptor libgail-common
