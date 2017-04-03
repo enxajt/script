@@ -33,9 +33,10 @@ sudo apt autoremove -y
 #ln -sf /vagrant/shared/vim/backup ~/.vim/
 #ln -sf /vagrant/shared/vim/swp ~/.vim/
 #ln -sf /vagrant/shared/vim/undo ~/.vim/
-ln -s /vagrant/shared/.vim ~/
+ln -sf /vagrant/shared/.vim ~/
 mkdir -p ~/.config/nvim 
 ln -sf ~/.vim/vimrc ~/.config/nvim/init.vim
+ln -sf ~/.vim/dein.toml ~/.config/nvim/
 
 # install dein.vim
 mkdir -p ~/.cache/dein

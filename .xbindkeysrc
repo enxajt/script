@@ -1,0 +1,12 @@
+"amixer sset Master toggle"
+	Control+Shift + F11
+
+"fcitx-remote -c"
+	Control+Shift + 6 + Release
+	Control+Shift + 7 + Release
+  Control+Shift + space + Release
+
+"fcitx-remote -o"
+	Control+Shift + 8 + Release
+	Control+Shift + 9 + Release
+  Control + space + Release
