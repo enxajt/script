@@ -9,6 +9,8 @@ export LC_ALL=C.UTF-8
 # neovim
 export XDG_CONFIG_HOME=~/.config
 
+export PATH="/home/enxajt/anaconda3/bin:$PATH"
+
 ########################################
 # color
 ########################################
@@ -267,5 +269,4 @@ if [ -d "/vagrant/shared/impress/mdpress" ] ; then
   PATH="$PATH:/vagrant/shared/impress/mdpress"
 fi
 
-
-export TERM=xterm-256color
+export TERM="screen"
