@@ -14,4 +14,4 @@ dropbox start
 
 # goldendict &
 
-sh ~/.dotfiles/always.sh
+sh ~/.dotfiles/always.sh &
