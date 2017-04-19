@@ -10,6 +10,7 @@ export LC_ALL=C.UTF-8
 export XDG_CONFIG_HOME=~/.config
 
 export PATH="/home/enxajt/anaconda3/bin:$PATH"
+export PATH="/home/enxajt/.tmux/bin:$PATH"
 
 ########################################
 # color
