@@ -28,8 +28,8 @@ const MAPPINGS = {
   'history_back': '<c-o>',
   'history_forward': '<c-i>',
 
-  'scroll_left': 'H',
-  'scroll_right': 'L',
+  'scroll_left': 'h',
+  'scroll_right': 'l',
   'scroll_page_down': '<c-f>',
   'scroll_page_up': '<c-b>',
   'scroll_half_page_down': '<c-d>',
