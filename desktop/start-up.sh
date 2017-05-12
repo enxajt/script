@@ -1,7 +1,7 @@
 #!/bin/sh
 
 gnome-terminal
-wmctrl -r "Terminal" -b toggle,maximized_vert,maximized_horz
+#wmctrl -r "Terminal" -b toggle,maximized_vert,maximized_horz
 #wmctrl -r "Terminal" -e 0,0,0,900,1000
 sh ~/.dotfiles/desktop/set-terminal.sh
 
