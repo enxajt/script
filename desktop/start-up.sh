@@ -1,5 +1,7 @@
 #!/bin/sh
 
+setxkbmap -option "ctrl:swapcaps"
+
 gnome-terminal
 #wmctrl -r "Terminal" -b toggle,maximized_vert,maximized_horz
 #wmctrl -r "Terminal" -e 0,0,0,900,1000
