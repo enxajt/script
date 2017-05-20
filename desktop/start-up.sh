@@ -1,7 +1,9 @@
 #!/bin/sh
 
 setxkbmap -option "ctrl:swapcaps"
-#fluxgui &
+
+redshift -O 3600
+#redshift -x
 
 gnome-terminal
 wmctrl -r "Terminal" -b toggle,maximized_vert,maximized_horz
