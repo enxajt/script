@@ -2,7 +2,10 @@
 
 setxkbmap -option "ctrl:swapcaps"
 
-redshift -O 3600
+#sudo tee brightness <<< 1
+
+#redshift -O 3600
+redshift -O 3000
 #redshift -x
 
 gnome-terminal
