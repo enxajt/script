@@ -9,9 +9,9 @@ redshift -O 3000
 #redshift -x
 
 gnome-terminal
-#wmctrl -r "Terminal" -b toggle,maximized_vert,maximized_horz
+wmctrl -r "Terminal" -b toggle,maximized_vert,maximized_horz
 #wmctrl -r "Terminal" -e 0,0,0,900,1000
-wmctrl -r "Terminal" -e 0,0,0,1930,1100
+#wmctrl -r "Terminal" -e 0,0,0,1930,1100
 sh ~/.dotfiles/desktop/set-terminal.sh
 
 firefox &
