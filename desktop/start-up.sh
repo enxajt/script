@@ -4,6 +4,12 @@ setxkbmap -option "ctrl:swapcaps"
 
 #sudo tee brightness <<< 1
 
+# resolution
+# https://ubuntuforums.org/showthread.php?t=1966900
+xrandr --newmode "1600x900_60.00" 118.25 1600 1696 1856 2112 900 903 908 934 -hsync +vsync
+xrandr --addmode eDP-1 "1600x900_60.00"
+xrandr --output eDP-1 --mode "1600x900_60.00" 
+
 #redshift -O 3600
 redshift -O 3000
 #redshift -x
