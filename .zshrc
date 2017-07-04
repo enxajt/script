@@ -271,3 +271,10 @@ if [ -d "/vagrant/shared/impress/mdpress" ] ; then
 fi
 
 export TERM="screen"
+
+########################################
+# safe rm
+if type trash-put &> /dev/null
+then
+    alias rm=trash-put
+fi
