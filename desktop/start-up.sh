@@ -14,7 +14,7 @@ xrandr --output eDP-1 --mode "1600x900_60.00"
 redshift -O 3000
 #redshift -x
 
-gnome-terminal
+gnome-terminal -e 'tmux -2'
 wmctrl -r "Terminal" -b toggle,maximized_vert,maximized_horz
 #wmctrl -r "Terminal" -e 0,0,0,900,1000
 #wmctrl -r "Terminal" -e 0,0,0,1930,1100
