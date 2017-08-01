@@ -15,7 +15,9 @@ export PATH="/home/enxajt/.tmux/bin:$PATH"
 ########################################
 # color
 ########################################
-export TERM=xterm-256color
+#export TERM=xterm-256color
+#export TERM=st-256color
+
 #autoload colors
 autoload -Uz colors
 colors
@@ -270,11 +272,13 @@ if [ -d "/vagrant/shared/impress/mdpress" ] ; then
   PATH="$PATH:/vagrant/shared/impress/mdpress"
 fi
 
-export TERM="screen"
-
 ########################################
 # safe rm
 if type trash-put &> /dev/null
 then
     alias rm=trash-put
 fi
+
+########################################
+# nvim
+alias nvim='NVIM_TUI_ENABLE_TRUE_COLOR=1 nvim'
