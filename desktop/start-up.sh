@@ -11,8 +11,8 @@ xrandr --addmode eDP-1 "1600x900_60.00"
 xrandr --output eDP-1 --mode "1600x900_60.00" 
 #rm $HOME/.config/monitors.xml
 
-#redshift -O 3600
-redshift -O 3000
+#redshift -O 3000
+redshift -O 2500
 #redshift -x
 
 # color is strange in tmux nvim
