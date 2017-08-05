@@ -211,7 +211,8 @@ alias h='fc -lt '%F %T' 1'
 
 alias cp='cp -i'
 alias mv='mv -i'
-alias rm='rm -i'
+alias mvt='\mv --backup=numbered --target-directory=${HOME}/.local/share/Trash/files'
+alias rm="echo 'Use mvt.\n'"
 alias mkdir='mkdir -p'
 alias ..='c ../'
 alias back='pushd'
