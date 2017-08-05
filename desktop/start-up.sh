@@ -17,20 +17,22 @@ redshift -O 2500
 
 # color is strange in tmux nvim
 #gnome-terminal -e 'tmux -2'
-gnome-terminal
+#gnome-terminal
+termite
 
-wmctrl -r "Terminal" -b toggle,maximized_vert,maximized_horz
+wmctrl -r "termite" -b toggle,maximized_vert,maximized_horz
+#wmctrl -r "Terminal" -b toggle,maximized_vert,maximized_horz
 #wmctrl -r "Terminal" -e 0,0,0,900,1000
 #wmctrl -r "Terminal" -e 0,0,0,1930,1100
-sh ~/.dotfiles/desktop/set-terminal.sh
+#sh ~/.dotfiles/desktop/set-terminal.sh
 
 firefox &
 wmctrl -r firefox -e 0,700,0,900,1300
 
 # dropbox (duplication with ansible)
-dropbox lansync n
-dropbox start
+#dropbox lansync n
+#dropbox start
 
 # goldendict &
 
-sh ~/.dotfiles/always.sh &
+#sh ~/.dotfiles/always.sh &
