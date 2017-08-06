@@ -212,7 +212,7 @@ alias h='fc -lt '%F %T' 1'
 alias cp='cp -i'
 alias mv='mv -i'
 alias mvt='\mv --backup=numbered --target-directory=${HOME}/.local/share/Trash/files'
-alias rm="echo 'Use mvt.\n'"
+alias rm="echo '! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! \nUse mvt.\n! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! \n'"
 alias mkdir='mkdir -p'
 alias ..='c ../'
 alias back='pushd'
@@ -268,10 +268,6 @@ case ${OSTYPE} in
         alias ls='ls -F --color=auto'
         ;;
 esac
-
-if [ -d "/vagrant/shared/impress/mdpress" ] ; then
-  PATH="$PATH:/vagrant/shared/impress/mdpress"
-fi
 
 ########################################
 # safe rm
