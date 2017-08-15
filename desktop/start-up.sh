@@ -2,6 +2,8 @@
 
 setxkbmap -option "ctrl:swapcaps"
 
+#sh ~/.dotfiles/always.sh &
+
 #sudo tee brightness <<< 1
 
 # https://ubuntuforums.org/showthread.php?t=1966900
@@ -33,5 +35,3 @@ wmctrl -r firefox -e 0,700,0,900,1300
 #dropbox start
 
 # goldendict &
-
-#sh ~/.dotfiles/always.sh &
