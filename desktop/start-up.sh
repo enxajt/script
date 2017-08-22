@@ -2,6 +2,12 @@
 
 setxkbmap -option "ctrl:swapcaps"
 
+# xinput list
+# if id=12
+# xinput list-props 12 | grep "Scrolling Distance"
+# if Synaptics Scrolling Distance (272)
+xinput set-prop 12 276 -119 -119
+
 #sh ~/.dotfiles/always.sh &
 
 #sudo tee brightness <<< 1
@@ -11,6 +17,7 @@ setxkbmap -option "ctrl:swapcaps"
 #xrandr --addmode eDP-1 "1600x900_60.00"
 #xrandr --output eDP-1 --mode "1600x900_60.00" 
 xrandr --output eDP1 --mode "1600x900"
+xrandr --output HDMI1 --pos 1600x0 --above eDP1
 
 #redshift -O 3000
 redshift -O 2500
@@ -28,7 +35,7 @@ wmctrl -r "termite" -b toggle,maximized_vert,maximized_horz
 #sh ~/.dotfiles/desktop/set-terminal.sh
 
 firefox&
-wmctrl -r firefox -e 0,700,0,900,1300
+#wmctrl -r firefox -e 0,700,0,900,1300
 
 # dropbox (duplication with ansible)
 #dropbox lansync n
