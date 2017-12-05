@@ -1,12 +1,15 @@
-"amixer sset Master toggle"
-	Control+Shift + F11
+#pavucontrol
 
-"fcitx-remote -c"
-	Control+Shift + 6 + Release
-	Control+Shift + 7 + Release
-  Control+Shift + space + Release
+# Decrease volume
+"amixer -M set Master 5-"
+   XF86AudioLowerVolume
 
-"fcitx-remote -o"
-	Control+Shift + 8 + Release
-	Control+Shift + 9 + Release
-  Control + space + Release
+# Increase volume
+"amixer -M set Master 5+"
+   XF86AudioRaiseVolume
+
+"xbacklight -dec 5 -steps 1"
+   XF86MonBrightnessDown 
+
+"xbacklight -inc 5 -steps 1"
+   XF86MonBrightnessUp

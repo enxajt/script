@@ -12,6 +12,8 @@ export XDG_CONFIG_HOME=~/.config
 export PATH="/home/enxajt/anaconda3/bin:$PATH"
 export PATH="/home/enxajt/.tmux/bin:$PATH"
 
+export GOPATH=$HOME/go-work
+
 ########################################
 # color
 ########################################

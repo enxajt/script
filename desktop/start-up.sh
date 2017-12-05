@@ -2,6 +2,8 @@
 
 setxkbmap -option "ctrl:swapcaps"
 
+xbindkeys
+
 # xinput list
 # if id=12
 # xinput list-props 12 | grep "Scrolling Distance"
@@ -14,13 +16,13 @@ xinput set-prop 12 276 -119 -119
 
 # https://ubuntuforums.org/showthread.php?t=1966900
 #xrandr --newmode "1600x900_60.00" 118.25 1600 1696 1856 2112 900 903 908 934 -hsync +vsync
-#xrandr --addmode eDP-1 "1600x900_60.00"
-#xrandr --output eDP-1 --mode "1600x900_60.00" 
 xrandr --output eDP1 --mode "1600x900"
-xrandr --output HDMI1 --pos 1600x0 --above eDP1
+#xrandr --output HDMI1 --pos 1600x0 --above eDP1
+xrandr --output DP1 --pos 1600x0 --above eDP1
+xrandr --output eDP2 --mode 1600x900 --pos 0x0 --rotate normal --output HDMI1 --mode 1920x1080 --rotate normal --above eDP1
 
-#redshift -O 3000
-redshift -O 2500
+#redshift -O 3001
+redshift -O 2501
 #redshift -x
 
 # color is strange in tmux nvim
@@ -28,7 +30,8 @@ redshift -O 2500
 #gnome-terminal
 termite&
 
-wmctrl -r "termite" -b toggle,maximized_vert,maximized_horz
+# for mate not i3
+#wmctrl -r "termite" -b toggle,maximized_vert,maximized_horz
 #wmctrl -r "Terminal" -b toggle,maximized_vert,maximized_horz
 #wmctrl -r "Terminal" -e 0,0,0,900,1000
 #wmctrl -r "Terminal" -e 0,0,0,1930,1100
@@ -36,6 +39,9 @@ wmctrl -r "termite" -b toggle,maximized_vert,maximized_horz
 
 firefox&
 #wmctrl -r firefox -e 0,700,0,900,1300
+
+# disable touchpad while typing
+syndaemon -i 1 -d -t -K
 
 # dropbox (duplication with ansible)
 #dropbox lansync n
