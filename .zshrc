@@ -12,7 +12,10 @@ export XDG_CONFIG_HOME=~/.config
 export PATH="/home/enxajt/anaconda3/bin:$PATH"
 export PATH="/home/enxajt/.tmux/bin:$PATH"
 
-export GOPATH=$HOME/go-work
+export GOPATH=$HOME/go
+export GOBIN=$GOPATH/bin
+export PATH=$PATH:/usr/local/go/bin
+export PATH=$GOBIN:$PATH
 
 ########################################
 # color
@@ -193,7 +196,7 @@ autoload -Uz history-search-end
 zle -N history-beginning-search-backward-end history-search-end
 zle -N history-beginning-search-forward-end history-search-end
 bindkey "^p" history-beginning-search-backward-end
-bindkey "^b" history-beginning-search-forward-end
+bindkey "^n" history-beginning-search-forward-end
 
 # Ctrl+sのロック, Ctrl+qのロック解除を無効にする
 setopt no_flow_control

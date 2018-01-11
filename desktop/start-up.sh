@@ -1,14 +1,16 @@
 #!/bin/sh
 
 setxkbmap -option "ctrl:swapcaps"
+setxkbmap -option "swapcaps:ctrl"
 
+# ~/.xbindkeysrc volume, backlight
 xbindkeys
 
-# xinput list
-# if id=12
-# xinput list-props 12 | grep "Scrolling Distance"
-# if Synaptics Scrolling Distance (272)
-xinput set-prop 12 276 -119 -119
+xinput set-prop 'SynPS/2 Synaptics TouchPad' 'Synaptics Scrolling Distance' -119 -119
+
+# Device Accel Velocity Scaling : speed
+# Acceleration: small is fast
+xinput set-prop 'SynPS/2 Synaptics TouchPad' 'Device Accel Constant Deceleration' 1.0
 
 #sh ~/.dotfiles/always.sh &
 
@@ -21,8 +23,7 @@ xrandr --output eDP1 --mode "1600x900"
 xrandr --output DP1 --pos 1600x0 --above eDP1
 xrandr --output eDP2 --mode 1600x900 --pos 0x0 --rotate normal --output HDMI1 --mode 1920x1080 --rotate normal --above eDP1
 
-#redshift -O 3001
-redshift -O 2501
+redshift -O 2700
 #redshift -x
 
 # color is strange in tmux nvim
