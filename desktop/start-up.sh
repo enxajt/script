@@ -18,12 +18,12 @@ xinput set-prop 'SynPS/2 Synaptics TouchPad' 'Device Accel Constant Deceleration
 
 # https://ubuntuforums.org/showthread.php?t=1966900
 #xrandr --newmode "1600x900_60.00" 118.25 1600 1696 1856 2112 900 903 908 934 -hsync +vsync
-xrandr --output eDP1 --mode "1600x900"
-#xrandr --output HDMI1 --pos 1600x0 --above eDP1
-xrandr --output DP1 --pos 1600x0 --above eDP1
+#xrandr --output eDP1 --mode "1600x900"
+#xrandr --output DP1 --pos 1600x0 --above eDP1
+xrandr --output eDP1 --mode "1600x900" --output DP1 --auto --above eDP1 # VGA@KRC
 xrandr --output eDP2 --mode 1600x900 --pos 0x0 --rotate normal --output HDMI1 --mode 1920x1080 --rotate normal --above eDP1
 
-redshift -O 2700
+redshift -O 3200
 #redshift -x
 
 # color is strange in tmux nvim

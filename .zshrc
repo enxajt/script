@@ -284,3 +284,11 @@ fi
 ########################################
 # nvim
 alias nvim='NVIM_TUI_ENABLE_TRUE_COLOR=1 nvim'
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/home/enxajt/Downloads/google-cloud-sdk/path.zsh.inc' ]; then source '/home/enxajt/Downloads/google-cloud-sdk/path.zsh.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f '/home/enxajt/Downloads/google-cloud-sdk/completion.zsh.inc' ]; then source '/home/enxajt/Downloads/google-cloud-sdk/completion.zsh.inc'; fi
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
