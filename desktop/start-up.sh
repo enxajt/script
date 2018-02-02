@@ -8,8 +8,11 @@ xbindkeys
 # Device Accel Velocity Scaling : speed
 # Acceleration: small is fast
 xinput set-prop 'SynPS/2 Synaptics TouchPad' 'Device Accel Constant Deceleration' 1.0
+# Natural scrolling
 xinput set-prop 'SynPS/2 Synaptics TouchPad' 'Synaptics Scrolling Distance' -119 -119
-# disable touchpad while typing
+# Horizontal scrolling
+xinput set-prop 'SynPS/2 Synaptics TouchPad' 'Synaptics Two-Finger Scrolling' 1 1
+# Disable touchpad while typing
 syndaemon -i 1 -d -t -K
 
 # https://ubuntuforums.org/showthread.php?t=1966900
