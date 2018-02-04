@@ -1,5 +1,0 @@
-[Desktop Entry]
-Type=Application
-Name=after-login
-Exec=sh /home/enxajt/.dotfiles/desktop/start-up.sh
-X-GNOME-Autostart-enabled=true
