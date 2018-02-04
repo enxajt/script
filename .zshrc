@@ -162,7 +162,7 @@ setopt share_history
 setopt hist_ignore_all_dups
 setopt histignorealldups
 # コマンド履歴
-HISTFILE=~/.zsh_history
+HISTFILE=$HOME/.config/zsh/zsh_history
 HISTSIZE=1000000
 SAVEHIST=1000000
 # スペースから始まるコマンド行はヒストリに残さない
