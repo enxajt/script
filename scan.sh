@@ -23,7 +23,7 @@ case $FORMAT in
     break
     ;;
   *)
-    echo "-t : invalid argument"
+    echo "-n : [Filename].png or [Filename].pdf."
     ;;
 esac
 
@@ -36,7 +36,7 @@ case $TYPE in
     break
     ;;
   *)
-    echo "-t : invalid argument"
+    echo "-t : c for Color, or g for Grayscale."
     ;;
 esac
 
@@ -50,4 +50,7 @@ imagescan --no-interface \
   --blank-threshold=0.0 \
   --scan-area='Auto Detect' > $NAME;
 
-firefox $NAME
+if [ -n "$TEST" ]
+then
+  firefox $NAME
+fi
