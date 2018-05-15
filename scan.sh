@@ -1,11 +1,16 @@
 #!/bin/sh
-while getopts dt:n: OPT
+
+DUPLEX='--duplex'
+
+while getopts dn: OPT
+#while getopts dt:n: OPT
 do
   case $OPT in
   d)
-    DUPLEX='--duplex';;
-  t)
-    TYPE=${OPTARG};;
+    DUPLEX=''
+    ;;
+#  t)
+#    TYPE=${OPTARG};;
   n)
     NAME=${OPTARG};;
   \?)
@@ -27,30 +32,37 @@ case $FORMAT in
     ;;
 esac
 
-case $TYPE in
-  c)
-    TYPE='Color'
-    ;;
-  g)
-    TYPE='Grayscale'
-    break
-    ;;
-  *)
-    echo "-t : c for Color, or g for Grayscale."
-    ;;
-esac
+scan() 
+{
+  #--blank-threshold=15 \
+  #15：裏写りスキップ
+  #10：裏写りスキャン、白地に文字スキップ
+  #5:真っ白スキップ
+  imagescan --no-interface \
+    --image-format=$FORMAT \
+    $DUPLEX \
+    --image-type=$TYPE \
+    --rotate Auto \
+    --resolution=300 \
+    --deskew \
+    --double-feed-detection \
+    --blank-threshold=5 \
+    --scan-area='Auto Detect' > $NAME;
+}
 
-imagescan --no-interface \
-  --image-format=$FORMAT \
-  $DUPLEX \
-  --image-type=$TYPE \
-  --resolution=300 \
-  --deskew \
-  --double-feed-detection \
-  --blank-threshold=0.0 \
-  --scan-area='Auto Detect' > $NAME;
+if [ -f $NAME ]
+then
+  echo -n "overwrite (y/n)?"
+  read yn
+  if echo "$yn" | grep -iq "^y" ;then
+    scan
+  fi
+else
+  scan
+fi
 
-if [ -n "$TEST" ]
+if [ -n "$NAME" ]
 then
   firefox $NAME
+  wmctrl -a tmux
 fi
