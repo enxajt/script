@@ -1,16 +1,13 @@
 #!/bin/sh
 
-DUPLEX='--duplex'
+DUPLEX=''
 
 while getopts dn: OPT
 #while getopts dt:n: OPT
 do
   case $OPT in
   d)
-    DUPLEX=''
-    ;;
-#  t)
-#    TYPE=${OPTARG};;
+    DUPLEX='--duplex';;
   n)
     NAME=${OPTARG};;
   \?)
@@ -41,7 +38,6 @@ scan()
   imagescan --no-interface \
     --image-format=$FORMAT \
     $DUPLEX \
-    --image-type=$TYPE \
     --rotate Auto \
     --resolution=300 \
     --deskew \
