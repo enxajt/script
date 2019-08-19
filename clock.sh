@@ -6,7 +6,18 @@ Europe/Helsinki
 Asia/Dubai
 Asia/Bangkok
 )
+
+last_number=$(( ${#timezones[*]} - 1 ))
+last=${timezones[$last_number]}
+
 for timezone in "${timezones[@]}"
 do
-  echo "$timezone" | cut -d \/ -f2 | tr -d "\n"; echo -n "`env TZ=$timezone date +%H` "
+  echo "$timezone" | cut -d \/ -f2 | cut -c1-3 | tr -d "\n";
+  echo -n "`env TZ=$timezone date +%H`";
+
+  if [[ $timezone == $last ]]
+  then
+    break
+  fi
+  echo " " | tr -d "\n";
 done
