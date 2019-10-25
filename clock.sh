@@ -1,5 +1,7 @@
 #!/bin/bash
 timezones=(
+America/Los_Angeles
+America/New_York
 Europe/London
 Europe/Paris #=Madrid,Warsaw
 Europe/Helsinki
