@@ -1,19 +1,22 @@
 #!/bin/sh
 
-DUPLEX=''
-
-while getopts dn: OPT
-#while getopts dt:n: OPT
+DUPLEX='--duplex'
+DOUBLE_FEED='--double-feed-detection'
+while getopts sdn: OPT
 do
   case $OPT in
+  s)
+    DUPLEX='';;
   d)
-    DUPLEX='--duplex';;
+    DOUBLE_FEED='';;
   n)
     NAME=${OPTARG};;
   \?)
     exit 1;;
   esac
 done
+
+
 
 FORMAT=$(echo $NAME | sed 's/^.*\.\([^\.]*\)$/\1/')
 case $FORMAT in
@@ -41,7 +44,7 @@ scan()
     --rotate Auto \
     --resolution=300 \
     --deskew \
-    --double-feed-detection \
+    $DOUBLE_FEED
     --blank-threshold=5 \
     --scan-area='Auto Detect' > $NAME;
 }
@@ -57,8 +60,8 @@ else
   scan
 fi
 
-if [ -n "$NAME" ]
-then
-  firefox $NAME
-  wmctrl -a tmux
-fi
+#if [ -n "$NAME" ]
+#then
+#  firefox $NAME
+#  wmctrl -a tmux
+#fi

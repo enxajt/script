@@ -1,6 +1,7 @@
 #!/bin/bash
 volume="$(pacmd list-sinks | grep -m 1 'volume: front-left:' | cut -f 2 -d / | tr -d ' \t%')"
-bth=`hcitool con | grep 00:87:63:11:19:1D`
+#bth=`hcitool con | grep 00:87:63:11:19:1D`
+bth=`hcitool con | grep -E '00:87:63:11:19:1D|36:00:AB:CD:3B:48|CB:20:06:00:A4:9D'`
 
 if [ -z "$bth" ]
 then
