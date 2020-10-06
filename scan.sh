@@ -44,7 +44,7 @@ scan()
     --rotate Auto \
     --resolution=300 \
     --deskew \
-    $DOUBLE_FEED
+    $DOUBLE_FEED \
     --blank-threshold=5 \
     --scan-area='Auto Detect' > $NAME;
 }
